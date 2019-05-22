@@ -253,6 +253,18 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
+/***/ "./src/scripts/Footer.tsx":
+/*!********************************!*\
+  !*** ./src/scripts/Footer.tsx ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction Footer({ testString }) {\r\n    return (React.createElement(\"div\", { className: \"nav-bar-wrapper\" },\r\n        React.createElement(\"h1\", null, testString),\r\n        React.createElement(\"h4\", null, \"This is the Footer\")));\r\n}\r\nexports.default = Footer;\r\n\n\n//# sourceURL=webpack:///./src/scripts/Footer.tsx?");
+
+/***/ }),
+
 /***/ "./src/scripts/GenericPage.tsx":
 /*!*************************************!*\
   !*** ./src/scripts/GenericPage.tsx ***!
@@ -261,7 +273,19 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nclass GenericPage extends React.Component {\r\n    render() {\r\n        return (React.createElement(\"div\", null,\r\n            React.createElement(\"h1\", null, \"THIS IS A TEST\")));\r\n    }\r\n}\r\nexports.default = GenericPage;\r\n\n\n//# sourceURL=webpack:///./src/scripts/GenericPage.tsx?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nconst NavBar_1 = __webpack_require__(/*! ./NavBar */ \"./src/scripts/NavBar.tsx\");\r\nconst Footer_1 = __webpack_require__(/*! ./Footer */ \"./src/scripts/Footer.tsx\");\r\nconst react_1 = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nfunction GenericPage() {\r\n    const [title, setTitle] = react_1.useState('');\r\n    function addStuff(id) {\r\n        return (React.createElement(\"div\", { key: id }, id));\r\n    }\r\n    const numberList = [1, 2, 3, 4];\r\n    return (React.createElement(React.Fragment, null,\r\n        React.createElement(NavBar_1.default, { randomWord: \"this is a prop\" }),\r\n        React.createElement(\"h1\", null, \"THIS IS A TEST\"),\r\n        numberList.map(addStuff),\r\n        React.createElement(Footer_1.default, { testString: \"hi\" })));\r\n}\r\nexports.default = GenericPage;\r\n\n\n//# sourceURL=webpack:///./src/scripts/GenericPage.tsx?");
+
+/***/ }),
+
+/***/ "./src/scripts/NavBar.tsx":
+/*!********************************!*\
+  !*** ./src/scripts/NavBar.tsx ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nconst React = __webpack_require__(/*! react */ \"./node_modules/react/index.js\");\r\nclass NavBar extends React.Component {\r\n    constructor(props) {\r\n        super(props);\r\n        this.state = {\r\n            counter: 0\r\n        };\r\n        this.onClick = this.onClick.bind(this);\r\n    }\r\n    onClick() {\r\n        this.setState({ counter: this.state.counter + 1 });\r\n    }\r\n    render() {\r\n        console.log(this.state.counter);\r\n        console.log(this.props.randomWord);\r\n        return (React.createElement(\"div\", { className: \"nav-bar-wrapper\" },\r\n            React.createElement(\"h4\", null, \"This is the navbar\"),\r\n            React.createElement(\"button\", { onClick: this.onClick }, \"Add Click\")));\r\n    }\r\n}\r\nexports.default = NavBar;\r\n\n\n//# sourceURL=webpack:///./src/scripts/NavBar.tsx?");
 
 /***/ }),
 

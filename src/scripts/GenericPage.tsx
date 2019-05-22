@@ -1,18 +1,29 @@
 import * as React from 'react';
+import NavBar from "./NavBar";
+import Footer from "./Footer";
+import {useState} from "react";
 
-interface GenericPageProps {
+export default function GenericPage(){
 
-}
-interface GenericPageState {
+    const [title, setTitle] = useState('');
 
-}
-
-export default class GenericPage extends React.Component<GenericPageProps, GenericPageState> {
-    render() {
+    function addStuff(id: number):JSX.Element{
         return (
-            <div>
-                <h1>THIS IS A TEST</h1>
+            <div key={id}>
+                {id}
             </div>
         )
     }
+
+    const numberList = [1,2,3,4];
+
+    return (
+        <React.Fragment>
+            <NavBar randomWord="this is a prop"/>
+            <h1>THIS IS A TEST</h1>
+            {numberList.map(addStuff)}
+            <Footer testString="hi"/>
+        </React.Fragment>
+    )
 }
+
