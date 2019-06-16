@@ -1,4 +1,9 @@
 import './../styles/main.scss';
+import React from "react";
+import ReactDOM from "react-dom";
+import GenericPage from "./GenericPage";
 
-alert('hi');
-console.log('hello');
+ReactDOM.render(
+    <GenericPage/>,
+    document.getElementById('root')
+);
